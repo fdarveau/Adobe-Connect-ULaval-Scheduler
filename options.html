@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Adobe Connect Auto Opener</title>
+    <style type="text/css">
+        .container {
+            width: 1000px;
+            clear: both;
+        }
+        
+        .container input:not([type=checkbox]) {
+            width: 95%;
+            clear: both;
+        }
+        
+        .alarm input {
+            width: 100%;
+            clear: both;
+        }
+    </style>
+
+    <link rel="stylesheet" type="text/css" href="dependencies/jquery.datetimepicker.css" />
+</head>
+
+<body>
+    <div class="container">
+        <label>
+            <b>Auto-login</b>:
+            <input type="checkbox" id="autologin">
+        </label>
+        <br/>
+        <br/>
+        <b>Adobe Connect credentials (Will NOT be used for anything if Auto-login is disabled.)</b>
+        <br/> <b>Username</b>:
+        <input type="text" id="username" style="display:inline-block">
+        <br/> <b>Password</b>: <b>(Stored in plain text in sync storage)</b>
+        <input type="password" id="password" style="display:inline-block">
+        <br/>
+        <br/>
+        <label>
+            <b>Auto-fullscreen</b>:
+            <input type="checkbox" id="autofullscreen">
+        </label>
+        <br/>
+        <br/>
+    </div>
+    <label><b>Sessions</b> (Names must be unique. Sessions without names will not be saved.)
+        <button id="addRow">Add session</button>
+    </label>
+    <table id="alarmsTable">
+        <tr>
+            <th style="width: 200px">
+                Name
+            </th>
+            <th style="width: 400px">
+                Url
+            </th>
+            <th>
+                Date and time
+            </th>
+            <th>
+                Recurrence
+            </th>
+        </tr>
+    </table>
+
+    <div id="status"></div>
+    <button id="save">Save</button>
+
+    <script src="dependencies/jquery-2.2.0.min.js"></script>
+    <script src="dependencies/jquery.datetimepicker.full.min.js"></script>
+    <script src="alarm.js"></script>
+    <script src="options.js"></script>
+</body>
+
+</html>

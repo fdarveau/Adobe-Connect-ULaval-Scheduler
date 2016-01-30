@@ -1,0 +1,47 @@
+{
+    "name": "Adobe Connect ULaval Auto Opener",
+    "version": "2.0",
+    "description": "Opens pre-scheduled Adobe Connect ULaval sessions. Also has an auto-login feature (excluding guest logins) and auto-fullscreen. See options to configure",
+    "options_ui": {
+        "page": "options.html",
+        "chrome_style": true
+    },
+    "background": {
+        "scripts": [
+            "dependencies/jquery-2.2.0.min.js",
+            "alarm.js",
+            "event.js"
+        ],
+        "persistent": false
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "*://classevirtuelle.ulaval.ca/*"
+            ],
+            "js": [
+                "dependencies/jquery-2.2.0.min.js",
+                "autoLogin.js"
+            ]
+        }
+    ],
+    "page_action": {
+        "default_icon": {
+            "19": "icons/icon-19.png",
+            "38": "icons/icon-38.png"
+        },
+        "default_title": "Adobe Connect Auto Opener"
+    },
+    "permissions": [
+        "alarms",
+        "background",
+        "storage",
+        "tabs"
+    ],
+    "icons": {
+        "16": "icons/icon-16.png",
+        "48": "icons/icon-48.png",
+        "128": "icons/icon-128.png"
+    },
+    "manifest_version": 2
+}
