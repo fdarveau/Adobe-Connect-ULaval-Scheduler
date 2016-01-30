@@ -3,7 +3,7 @@
         "message": "Planificateur Adobe Connect ULaval"
     },
     "extensionDescription": {
-        "message": "Ouvre des séances Adobe Connect de l'Université Laval qui ont été planifiées. Offre aussi une fonctionnalité de connexion et/ou de mise en plein écran automatique. Voir les options pour planifier les séances."
+        "message": "Ouvre des séances Adobe Connect de l'Université Laval qui ont été planifiées. Voir les options pour planifier les séances."
     },
     "pageActionTitle": {
         "message": "Planifier des séances"
