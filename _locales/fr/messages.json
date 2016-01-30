@@ -1,74 +1,75 @@
 {
     "extensionName": {
-        "message": "Adobe Connect ULaval Scheduler"
+        "message": "Planificateur Adobe Connect ULaval"
     },
     "extensionDescription": {
-        "message": "Opens pre-scheduled Adobe Connect ULaval classes. Also has an auto-login feature and auto-fullscreen. See options to configure."
+        "message": "Ouvre des séances Adobe Connect de l'Université Laval qui ont été planifiées. Offre aussi une fonctionnalité de connexion et/ou de mise en plein écran automatique. Voir les options pour planifier les séances."
     },
     "pageActionTitle": {
-        "message": "Schedule classes"
+        "message": "Planifier des séances"
     },
     "optionsSaved": {
-        "message": "Options saved"
+        "message": "Options sauvegardées"
     },
     "recOnce": {
-        "message": "Once"
+        "message": "Une fois"
     },
     "recDaily": {
-        "message": "Daily"
+        "message": "Journalier"
     },
     "recWeekly": {
-        "message": "Weekly"
+        "message": "Hebdomadaire"
     },
     "export": {
-        "message": "export"
+        "message": "exportation",
+        "description": "Fin du nom du fichier d'exportation par défaut"
     },
     "autoLogin": {
-        "message": "Auto-login"
+        "message": "Connexion automatique"
     },
     "credentialsInfo": {
-        "message": "Adobe Connect ULaval credentials (Will NOT be used for anything if Auto-login is disabled.)"
+        "message": "Informations d'authentification ULaval (Ne seront PAS utilisées si la connexion automatique est désactivée)"
     },
     "IDUL": {
         "message": "IDUL"
     },
     "password": {
-        "message": "Password"
+        "message": "Mot de passe"
     },
     "passwordInfo": {
-        "message": "(Stored in plain text in sync storage)"
+        "message": "(Conservé en texte brut sur votre stockage synchronisé)"
     },
     "autoFullscreen": {
-        "message": "Auto-fullscreen"
+        "message": "Plein écran automatique"
     },
     "classes": {
-        "message": "Classes"
+        "message": "Séances"
     },
     "classesInfo": {
-        "message": "(Names must be unique. Classes without names will be deleted / not be saved.)"
+        "message": "(Les noms doivent être uniques. Les séances sans nom seront supprimées ou ne seront pas sauvegardées.)"
     },
     "addClass": {
-        "message": "Add class"
+        "message": "Ajouter une séance"
     },
     "exportClasses": {
-        "message": "Export classes"
+        "message": "Exporter les séances"
     },
     "importClasses": {
-        "message": "Import classes"
+        "message": "Importer des séances"
     },
     "className": {
-        "message": "Name"
+        "message": "Nom"
     },
     "classUrl": {
         "message": "Url"
     },
     "classDateTime": {
-        "message": "Date and time"
+        "message": "Date et heure"
     },
     "classRecurrence": {
-        "message": "Recurrence"
+        "message": "Répétition"
     },
     "save": {
-        "message": "Save"
+        "message": "Sauvegarder"
     }    
 }

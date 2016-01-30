@@ -21,7 +21,8 @@
         "message": "Weekly"
     },
     "export": {
-        "message": "export"
+        "message": "export",
+        "description": "Default export file name ending"
     },
     "autoLogin": {
         "message": "Auto-login"
