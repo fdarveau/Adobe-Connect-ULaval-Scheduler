@@ -60,6 +60,6 @@ chrome.pageAction.onClicked.addListener(function (tab) {
 chrome.tabs.onUpdated.addListener(function (tabId, changeInfo, tab) {
     if (tab.url.indexOf('classevirtuelle.ulaval.ca') > -1) {
         chrome.pageAction.show(tabId);
-        chrome.pageAction.setTitle({ tabId: tab.id, title: "Configure Automatic Sessions Opener" });
+        chrome.pageAction.setTitle({ tabId: tab.id, title: "Schedule classes" });
     }
 });
