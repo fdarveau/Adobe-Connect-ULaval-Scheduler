@@ -3,4 +3,4 @@ This Chrome extension allows any student from Université Laval to schedule thei
 
 There is also an auto-login feature and auto-fullscreen feature.
 
-**Note that if you choose to use the auto-login feature, you ULaval network password will be stored in your Chrome sync storage in plain text.**
+**Note that if you choose to use the auto-login feature, your ULaval network password will be stored in your Chrome sync storage in plain text.**
