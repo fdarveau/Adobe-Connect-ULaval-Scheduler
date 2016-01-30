@@ -1,6 +1,6 @@
 {
     "name": "Adobe Connect ULaval Scheduler",
-    "version": "2.1",
+    "version": "3.0",
     "description": "Opens pre-scheduled Adobe Connect ULaval classes. Also has an auto-login feature and auto-fullscreen. See options to configure.",
     "options_ui": {
         "page": "options.html",
