@@ -28,7 +28,7 @@ function addAlarmRow(hasAlarm, alarm) {
         mask: true,
         minDate: '0'
     });
-    if (hasAlarm) {
+    if (typeof (alarm) !== 'undefined') {
         $('#name' + nbAlarms).val(alarm.name);
         $('#url' + nbAlarms).val(alarm.url);
         $('#dateTime' + nbAlarms).val(alarm.dateTime);
