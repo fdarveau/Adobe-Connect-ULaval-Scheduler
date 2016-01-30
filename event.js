@@ -23,6 +23,16 @@ function resetAlarms() {
 
 function onInit() {
     resetAlarms();
+    chrome.storage.sync.get({
+        configuredOnce: false
+    }, function (items) {
+        if (!items.configuredOnce) {
+            chrome.storage.sync.set({
+                configuredOnce: true
+            });
+            chrome.runtime.openOptionsPage();
+        }
+    });
 }
 
 function onAlarm(alarm) {
