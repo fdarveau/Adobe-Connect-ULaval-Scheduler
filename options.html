@@ -2,7 +2,6 @@
 <html>
 
 <head>
-    <title>Adobe Connect ULaval Scheduler options</title>
     <style type="text/css">
         .container {
             width: 1000px;
@@ -10,7 +9,7 @@
         }
         
         .container input:not([type=checkbox]) {
-            width: 95%;
+            width: 100%;
             clear: both;
         }
         
@@ -18,58 +17,63 @@
             width: 100%;
             clear: both;
         }
+        
+        div {
+            display:inline-block;
+        }
     </style>
 
-    <link rel="stylesheet" type="text/css" href="dependencies/jquery.datetimepicker.css" />
+    <link rel="stylesheet" type="text/css" href="dependencies/jquery.datetimepicker.css"></link>
 </head>
 
 <body>
     <div class="container">
         <label>
-            <b>Auto-login</b>:
+            <b><div data-i18n="autoLogin"></div></b>:
             <input type="checkbox" id="autologin">
         </label>
         <br/>
         <br/>
-        <b>Adobe Connect ULaval credentials (Will NOT be used for anything if Auto-login is disabled.)</b>
-        <br/> <b>Username</b>:
+        <b><div data-i18n="credentialsInfo"></div></b>
+        <br/> <b><div data-i18n="IDUL"></div></b>:
         <input type="text" id="username" style="display:inline-block">
-        <br/> <b>Password</b>: <b>(Stored in plain text in sync storage)</b>
+        <br/> <b><div data-i18n="password"></div></b>: <b><div data-i18n="passwordInfo"></div></b>
         <input type="password" id="password" style="display:inline-block">
         <br/>
         <br/>
         <label>
-            <b>Auto-fullscreen</b>:
+            <b><div data-i18n="autoFullscreen"></div></b>:
             <input type="checkbox" id="autofullscreen">
         </label>
         <br/>
         <br/>
     </div>
-    <label><b>Classes</b> (Names must be unique. Classes without names will be deleted / not be saved.)
-        <button id="addRow">Add class</button>
-        <button id="export">Export classes</button>
-        <button id="import">Import classes</button>
-        <input type="file" id="classesFile" accept=".acus" />
+    <label><b><div data-i18n="classes"></div></b> <div data-i18n="classesInfo"></div>
+        <br/>
+        <button id="addRow"><div data-i18n="addClass"></div></button>
+        <button id="export"><div data-i18n="exportClasses"></div></button>
+        <button id="import"><div data-i18n="importClasses"></div></button>
+        <input type="file" id="classesFile" accept=".acus">
     </label>
     <table id="alarmsTable">
         <tr>
             <th style="width: 200px">
-                Name
+                <div data-i18n="className"></div>
             </th>
             <th style="width: 400px">
-                Url
+                <div data-i18n="classUrl"></div>
             </th>
             <th>
-                Date and time
+                <div data-i18n="classDateTime"></div>
             </th>
             <th>
-                Recurrence
+                <div data-i18n="classRecurrence"></div>
             </th>
         </tr>
     </table>
 
-    <div id="status"></div>
-    <button id="save">Save</button>
+    <button id="save"><div data-i18n="save"></div></button>
+    <div id="status" style="color:green"></div>
 
     <script src="dependencies/jquery-2.2.0.min.js"></script>
     <script src="dependencies/jquery.datetimepicker.full.min.js"></script>

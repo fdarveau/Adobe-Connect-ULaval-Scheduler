@@ -15,12 +15,15 @@ function addAlarmRow(hasAlarm, alarm) {
                 </td>
                 <td>
                     <select id="recurrent%number%">
-                        <option value=-1>Once</option>
-                        <option value=1440>Daily</option>
-                        <option value=10080>Weekly</option>
+                        <option value=-1>%recOnce%</option>
+                        <option value=1440>%recDaily%</option>
+                        <option value=10080>%recWeekly%</option>
                     </select>
                 </td>
-            </tr>`.replace(new RegExp("%number%", 'g'), nbAlarms));
+            </tr>`.replace(new RegExp("%number%", 'g'), nbAlarms)
+        .replace("%recOnce%", chrome.i18n.getMessage("recOnce"))
+        .replace("%recDaily%", chrome.i18n.getMessage("recDaily"))
+        .replace("%recWeekly%", chrome.i18n.getMessage("recWeekly")));
     $('#dateTime' + nbAlarms).datetimepicker({
         mask: true,
         minDate: '0'
@@ -62,10 +65,10 @@ function save_options() {
     }, function () {
         // Update status to let user know options were saved.
         var status = document.getElementById('status');
-        status.textContent = 'Options saved.';
+        status.textContent = chrome.i18n.getMessage("optionsSaved");
         setTimeout(function () {
             status.textContent = '';
-        }, 750);
+        }, 2000);
 
         alarms = []; //Will be retrieved again when restoring
         restore_options();
@@ -104,7 +107,7 @@ function exportAlarms() {
     window.requestFileSystem = window.requestFileSystem || window.webkitRequestFileSystem;
 
     window.requestFileSystem(window.TEMPORARY, 1024 * 1024, function (fs) {
-        fs.root.getFile('adobe_connect_ulaval_scheduler_export.acus', { create: true }, function (fileEntry) {
+        fs.root.getFile(chrome.i18n.getMessage("extensionName") + '_' + chrome.i18n.getMessage("export") + '.acus', { create: true }, function (fileEntry) {
             fileEntry.createWriter(function (fileWriter) {
                 var exportString = "";
                 alarms.forEach(function (alarm) {
@@ -160,7 +163,15 @@ function importAlarms() {
     $("#classesFile").val('');
 }
 
-$(document).ready(restore_options);
+$(document).ready(function () {
+    $('[data-i18n]').each(function () {
+        var me = $(this);
+        var key = me.data('i18n');
+        me.html(chrome.i18n.getMessage(key));
+    });
+    restore_options();
+});
+
 document.getElementById('save').addEventListener('click', save_options);
 document.getElementById('addRow').addEventListener('click', addAlarmRow);
 document.getElementById('import').addEventListener('click', importAlarms);

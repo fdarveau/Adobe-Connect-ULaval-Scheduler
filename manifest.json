@@ -1,7 +1,8 @@
 {
-    "name": "Adobe Connect ULaval Scheduler",
+    "name": "__MSG_extensionName__",
     "version": "3.0",
-    "description": "Opens pre-scheduled Adobe Connect ULaval classes. Also has an auto-login feature and auto-fullscreen. See options to configure.",
+    "description": "__MSG_extensionDescription__",
+    "default_locale": "en",
     "options_ui": {
         "page": "options.html",
         "chrome_style": true
@@ -30,7 +31,7 @@
             "19": "icons/icon-19.png",
             "38": "icons/icon-38.png"
         },
-        "default_title": "Adobe Connect ULaval Scheduler"
+        "default_title": "__MSG_pageActionTitle__"
     },
     "permissions": [
         "alarms",

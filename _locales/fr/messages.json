@@ -1,0 +1,74 @@
+{
+    "extensionName": {
+        "message": "Adobe Connect ULaval Scheduler"
+    },
+    "extensionDescription": {
+        "message": "Opens pre-scheduled Adobe Connect ULaval classes. Also has an auto-login feature and auto-fullscreen. See options to configure."
+    },
+    "pageActionTitle": {
+        "message": "Schedule classes"
+    },
+    "optionsSaved": {
+        "message": "Options saved"
+    },
+    "recOnce": {
+        "message": "Once"
+    },
+    "recDaily": {
+        "message": "Daily"
+    },
+    "recWeekly": {
+        "message": "Weekly"
+    },
+    "export": {
+        "message": "export"
+    },
+    "autoLogin": {
+        "message": "Auto-login"
+    },
+    "credentialsInfo": {
+        "message": "Adobe Connect ULaval credentials (Will NOT be used for anything if Auto-login is disabled.)"
+    },
+    "IDUL": {
+        "message": "IDUL"
+    },
+    "password": {
+        "message": "Password"
+    },
+    "passwordInfo": {
+        "message": "(Stored in plain text in sync storage)"
+    },
+    "autoFullscreen": {
+        "message": "Auto-fullscreen"
+    },
+    "classes": {
+        "message": "Classes"
+    },
+    "classesInfo": {
+        "message": "(Names must be unique. Classes without names will be deleted / not be saved.)"
+    },
+    "addClass": {
+        "message": "Add class"
+    },
+    "exportClasses": {
+        "message": "Export classes"
+    },
+    "importClasses": {
+        "message": "Import classes"
+    },
+    "className": {
+        "message": "Name"
+    },
+    "classUrl": {
+        "message": "Url"
+    },
+    "classDateTime": {
+        "message": "Date and time"
+    },
+    "classRecurrence": {
+        "message": "Recurrence"
+    },
+    "save": {
+        "message": "Save"
+    }    
+}
