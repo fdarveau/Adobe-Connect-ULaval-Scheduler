@@ -66,7 +66,7 @@ function save_options() {
         setTimeout(function () {
             status.textContent = '';
         }, 750);
-        
+
         alarms = []; //Will be retrieved again when restoring
         restore_options();
         chrome.runtime.sendMessage("resetAlarms");
@@ -89,9 +89,9 @@ function restore_options() {
         document.getElementById('autofullscreen').checked = items.autofullscreen;
 
         $('.alarm').remove();
-        items.savedAlarms.forEach(function (entry) {
-            alarms.push(entry);
-            addAlarmRow(true, entry);
+        items.savedAlarms.forEach(function (alarm) {
+            alarms.push(alarm);
+            addAlarmRow(true, alarm);
         })
 
         if (nbAlarms == 0) {
@@ -104,14 +104,14 @@ function exportAlarms() {
     window.requestFileSystem = window.requestFileSystem || window.webkitRequestFileSystem;
 
     window.requestFileSystem(window.TEMPORARY, 1024 * 1024, function (fs) {
-        fs.root.getFile('adobe_connect_ulaval_scheduler_export.config', { create: true }, function (fileEntry) {
+        fs.root.getFile('adobe_connect_ulaval_scheduler_export.acus', { create: true }, function (fileEntry) {
             fileEntry.createWriter(function (fileWriter) {
                 var exportString = "";
                 alarms.forEach(function (alarm) {
                     if (exportString !== "") exportString += "|&|";
                     exportString += JSON.stringify(alarm);
                 });
-                
+
                 var arr = new Uint8Array(exportString.length);
                 var i = 0;
                 for (i = 0; i < exportString.length; i++) {
@@ -120,8 +120,8 @@ function exportAlarms() {
 
                 var blob = new Blob([arr]);
 
-                fileWriter.addEventListener("writeend", function () {                
-                    chrome.downloads.download({url: fileEntry.toURL(), saveAs: true });
+                fileWriter.addEventListener("writeend", function () {
+                    chrome.downloads.download({ url: fileEntry.toURL(), saveAs: true });
                 }, false);
 
                 fileWriter.write(blob);
@@ -131,7 +131,33 @@ function exportAlarms() {
 }
 
 function importAlarms() {
+    var fileList = document.getElementById('classesFile').files;
+
+    // Make sure file has been selected 
+    if (!(fileList instanceof FileList) || fileList.length === 0) {
+        return false;
+    }
+
+    var fileReader = new FileReader();
+    fileReader.onloadend = (function (file) {
+
+        return function (fileContents) {
+            var importedString = fileContents.currentTarget.result;
+            var alarmsStrings = importedString.split("|&|");
+            alarmsStrings.forEach(function (alarm) {
+                var actualAlarmObject = JSON.parse(alarm);
+                alarms.push(actualAlarmObject);
+                addAlarmRow(true, actualAlarmObject);
+            });
+        }
+
+    })(fileList[0]);  // fileList[0] assumes only one file has been selected
+
+    fileReader.readAsText(fileList[0]);
     
+    //Reset controls
+    $('#import').prop('disabled', true);
+    $("#classesFile").val('');
 }
 
 $(document).ready(restore_options);
@@ -139,3 +165,9 @@ document.getElementById('save').addEventListener('click', save_options);
 document.getElementById('addRow').addEventListener('click', addAlarmRow);
 document.getElementById('import').addEventListener('click', importAlarms);
 document.getElementById('export').addEventListener('click', exportAlarms);
+
+$('#import').prop('disabled', true);
+
+$("#classesFile").change(function (e) {
+    $('#import').prop('disabled', document.getElementById('classesFile').files.length <= 0);
+});

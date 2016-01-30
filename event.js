@@ -21,7 +21,6 @@ function resetAlarms() {
     });
 }
 
-// When the extension is installed or upgraded ...
 function onInit() {
     resetAlarms();
 }
@@ -33,13 +32,16 @@ function onAlarm(alarm) {
         var i = 0;
         for (i = 0; i < items.savedAlarms.length; i++) {
             if (alarm.name === items.savedAlarms[i].name) {
-                chrome.tabs.create({ url: items.savedAlarms[i].url, active: true });
+                if (alarm.scheduledTime > Date.now() - 1800000) { //If scheduled time was more than 30 minutes ago, dont open the class
+                    chrome.tabs.create({ url: items.savedAlarms[i].url, active: true });
+                }
                 break;
             }
         }
     });
 }
 
+//Create all listeners
 chrome.runtime.onInstalled.addListener(onInit);
 chrome.alarms.onAlarm.addListener(onAlarm);
 
