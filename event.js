@@ -53,6 +53,7 @@ function onAlarm(alarm) {
 
 //Create all listeners
 chrome.runtime.onInstalled.addListener(onInit);
+chrome.runtime.onStartup.addListener(onInit);
 chrome.alarms.onAlarm.addListener(onAlarm);
 
 chrome.runtime.onMessage.addListener(function (message, sender, sendResponse) {
