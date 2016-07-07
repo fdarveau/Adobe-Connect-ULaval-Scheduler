@@ -3,7 +3,7 @@
         "message": "Adobe Connect ULaval Scheduler"
     },
     "extensionDescription": {
-        "message": "Opens pre-scheduled Adobe Connect ULaval classes. Also has an auto-login feature and auto-fullscreen. See options to configure."
+        "message": "Opens pre-scheduled Adobe Connect ULaval classes. Also has an auto-fullscreen. See options to configure."
     },
     "pageActionTitle": {
         "message": "Schedule classes"
