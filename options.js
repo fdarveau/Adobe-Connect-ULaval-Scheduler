@@ -50,16 +50,9 @@ function save_options() {
         }
         i++;
     }
-
-    var autologin = document.getElementById('autologin').checked;
-    var username = $('#username').val();
-    var password = $('#password').val();
+    
     var autofullscreen = document.getElementById('autofullscreen').checked;
-    if (username == '' || password == '') autologin = false;
     chrome.storage.sync.set({
-        autologin: autologin,
-        username: username,
-        password: password,
         autofullscreen: autofullscreen,
         savedAlarms: alarms
     }, function () {
@@ -80,15 +73,9 @@ function save_options() {
 // stored in chrome.storage.
 function restore_options() {
     chrome.storage.sync.get({
-        autologin: false,
-        username: '',
-        password: '',
         autofullscreen: false,
         savedAlarms: []
     }, function (items) {
-        document.getElementById('autologin').checked = items.autologin;
-        $('#username').val(items.username);
-        $('#password').val(items.password);
         document.getElementById('autofullscreen').checked = items.autofullscreen;
 
         $('.alarm').remove();

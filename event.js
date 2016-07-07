@@ -24,14 +24,25 @@ function resetAlarms() {
 function onInit() {
     resetAlarms();
     chrome.storage.sync.get({
-        configuredOnce: false
+        configuredOnce: false,
+        lastVersion: -1
     }, function (items) {
         if (!items.configuredOnce) {
             chrome.storage.sync.set({
                 configuredOnce: true
             });
             chrome.runtime.openOptionsPage();
+        } else if (items.version <= 3.4) { //Auto-login feature was removed in version 3.5
+            chrome.storage.sync.remove([
+                "autologin",
+                "username",
+                "password"
+            ])
+            chrome.runtime.openOptionsPage(); //So the users are notified of the updated settings and removal of the auto-login feature without adding the notifications permission
         }
+    });
+    chrome.storage.sync.set({
+        lastVersion: chrome.runtime.getManifest().version
     });
 }
 

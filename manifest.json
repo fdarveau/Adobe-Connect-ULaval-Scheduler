@@ -1,6 +1,6 @@
 {
     "name": "__MSG_extensionName__",
-    "version": "3.4",
+    "version": "3.5",
     "description": "__MSG_extensionDescription__",
     "default_locale": "en",
     "options_ui": {
@@ -22,7 +22,7 @@
             ],
             "js": [
                 "dependencies/jquery-2.2.0.min.js",
-                "autoLogin.js"
+                "autoFullscreen.js"
             ]
         }
     ],

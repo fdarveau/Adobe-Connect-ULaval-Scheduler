@@ -24,8 +24,8 @@
         "message": "exportation",
         "description": "Fin du nom du fichier d'exportation par défaut"
     },
-    "autoLogin": {
-        "message": "Connexion automatique"
+    "autoLoginRemoved": {
+        "message": "La fonctionnalité de connexion automatique a été retirée afin d'être conforme avec la politique de sécurité de l'Université Laval."
     },
     "credentialsInfo": {
         "message": "Informations d'authentification ULaval (Ne seront PAS utilisées si la connexion automatique est désactivée)"

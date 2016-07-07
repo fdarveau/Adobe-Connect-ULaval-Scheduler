@@ -24,20 +24,11 @@
         "message": "export",
         "description": "Default export file name ending"
     },
-    "autoLogin": {
-        "message": "Auto-login"
+    "autoLoginRemoved": {
+        "message": "Auto-login feature has been removed to comply with Université Laval security policy."
     },
     "credentialsInfo": {
         "message": "Adobe Connect ULaval credentials (Will NOT be used for anything if Auto-login is disabled.)"
-    },
-    "IDUL": {
-        "message": "IDUL"
-    },
-    "password": {
-        "message": "Password"
-    },
-    "passwordInfo": {
-        "message": "(Stored in plain text in sync storage)"
     },
     "autoFullscreen": {
         "message": "Auto-fullscreen"
